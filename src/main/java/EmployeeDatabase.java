@@ -10,6 +10,7 @@ import java.util.List;
  *
  * @see <a href="https://cs125.cs.illinois.edu/lab/10/">Lab 10 Description</a>
  */
+@SuppressWarnings("checkstyle:all")
 public class EmployeeDatabase {
 
     /**
@@ -56,6 +57,14 @@ public class EmployeeDatabase {
         /*
          * Implement this function
          */
+
+        if (employee == null) {
+            return 0;
+        }
+        if (this.findManager(employee) == (null)) {
+            return 0;
+        }
+        return 1 + countManagersAbove(findManager(employee));
     }
 
     /**
@@ -70,6 +79,7 @@ public class EmployeeDatabase {
         /*
          * Implement this function
          */
+        return 0;
     }
 
     /**
